@@ -4,12 +4,12 @@ import { motion } from "motion/react";
 
 const companyInfo = [
   { label: "商号", value: "株式会社JULA（株式会社ゆら）" },
-  { label: "法人番号", value: "未定" },
+  { label: "法人番号", value: "9440001009748" },
   { label: "代表者", value: "代表取締役/CEO 関口純平" },
   { label: "所在地", value: "〒049-0101 北海道北斗市追分4-11-8" },
   { label: "代表番号", value: "080-9585-8493" },
   { label: "メールアドレス", value: "info@jula.jp" },
-  { label: "創業", value: "2026年1月1日" },
+  { label: "創業", value: "2026年1月14日" },
   { label: "主要取引銀行", value: "三井住友銀行" },
   { label: "営業時間", value: "平日 9:00 - 18:00" },
 ];
