@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import ServicesContent from "./ServicesContent";
 
+const siteUrl = "https://jula-inc.co.jp";
+
 export const metadata: Metadata = {
   title: "事業内容 | アダルト業界特化の決済・プラットフォーム・AI開発",
   description: "株式会社ゆらの事業内容。アダルト業界に特化した決済インフラ構築、動画配信プラットフォーム開発、ファンクラブサイト構築、AIによるコンテンツ自動管理、広告に頼らないSEO・アフィリエイト・SNSマーケティング。他社に断られた案件もNDAベースで対応。",
@@ -8,10 +10,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "事業内容 | アダルト業界特化の決済・プラットフォーム・AI開発",
     description: "アダルト業界特化。決済・プラットフォーム・AI・グロース支援。他社に断られた案件もNDAベースで対応。",
-    url: "/services",
+    url: `${siteUrl}/services`,
   },
   alternates: {
-    canonical: "/services",
+    canonical: `${siteUrl}/services`,
   },
 };
 

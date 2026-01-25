@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "関口純平 | 株式会社ゆら・株式会社NINJA 代表取締役CEO",
     description: "関口純平（せきぐちじゅんぺい）- 株式会社ゆら・株式会社NINJA代表。エンジニア出身の起業家。アダルト業界特化IT企業とメディア・スポーツ事業を展開。",
-    url: "/ceo",
+    url: `${siteUrl}/ceo`,
     type: "profile",
     images: [
       {
-        url: "/sekiguchi.png",
+        url: `${siteUrl}/sekiguchi.png`,
         width: 400,
         height: 400,
         alt: "関口純平 - 株式会社ゆら代表取締役CEO",
@@ -25,10 +25,10 @@ export const metadata: Metadata = {
     card: "summary",
     title: "関口純平 | 株式会社ゆら・株式会社NINJA 代表取締役CEO",
     description: "エンジニア出身の起業家。アダルト業界特化IT企業とメディア・スポーツ事業を展開。",
-    images: ["/sekiguchi.png"],
+    images: [`${siteUrl}/sekiguchi.png`],
   },
   alternates: {
-    canonical: "/ceo",
+    canonical: `${siteUrl}/ceo`,
   },
   other: {
     "profile:first_name": "純平",
@@ -57,12 +57,8 @@ const personJsonLd = {
   image: `${siteUrl}/sekiguchi.png`,
   url: `${siteUrl}/ceo`,
   sameAs: [],
-  knowsAbout: ["AI開発", "Web開発", "DX推進", "起業", "エンジニアリング"],
-  alumniOf: {
-    "@type": "CollegeOrUniversity",
-    name: "大学",
-  },
-  description: "株式会社ゆら・株式会社NINJAの代表取締役CEO。大学時代から4社でエンジニア経験を積み、国内最大手コンサルティングファームを経て起業。",
+  knowsAbout: ["AI開発", "Web開発", "DX推進", "起業", "エンジニアリング", "アダルト業界IT"],
+  description: "株式会社ゆら・株式会社NINJAの代表取締役CEO。大学時代から4社でエンジニア経験を積み、国内最大手コンサルティングファームを経て起業。アダルト業界特化IT企業を経営。",
 };
 
 export default function CEOPage() {
