@@ -7,7 +7,7 @@ const services = [
   {
     id: "platform",
     label: "Platform Development",
-    title: "FANZA手数料、高くない？",
+    title: "プラットフォーム手数料、高くない？",
     description: "売上の30〜50%を持っていかれる。自社プラットフォームなら、その利益は全部あなたのもの。",
     points: [
       {
@@ -16,7 +16,7 @@ const services = [
       },
       {
         title: "ファンクラブ・クリエイター支援サイト",
-        detail: "OnlyFans、Fantia型のプラットフォームを自社で。投げ銭、限定コンテンツ、ファンとの直接課金。",
+        detail: "ファンサイト型のプラットフォームを自社で。投げ銭、限定コンテンツ、ファンとの直接課金。",
       },
       {
         title: "ライブ配信システム",
@@ -29,7 +29,7 @@ const services = [
     id: "payment",
     label: "Payment Infrastructure",
     title: "決済、断られ続けてない？",
-    description: "Stripe、PayPal、国内クレカ大手。全部NG。でも、方法はある。",
+    description: "主要決済サービス、国内クレカ大手。全部NG。でも、方法はある。",
     points: [
       {
         title: "業界対応決済の導入支援",
@@ -62,7 +62,7 @@ const services = [
       },
       {
         title: "違反コンテンツ自動検出",
-        detail: "児童ポルノ、無修正、権利侵害。アップロード時に自動スキャンして即ブロック。",
+        detail: "違法コンテンツ、無修正、権利侵害。アップロード時に自動スキャンして即ブロック。",
       },
     ],
     pain: "運用コストが売上を食い潰す前に、仕組みで解決する。",
@@ -70,11 +70,11 @@ const services = [
   {
     id: "growth",
     label: "Growth & Marketing",
-    title: "Google広告もMeta広告も使えない。どうする？",
+    title: "主要広告プラットフォームが使えない。どうする？",
     description: "広告が使えないなら、検索とファンで勝つ。業界特化のグロース戦略を設計する。",
     points: [
       {
-        title: "アダルトSEO",
+        title: "業界特化SEO",
         detail: "一般SEOとはロジックが違う。業界特有のキーワード戦略、被リンク獲得、サイト構造設計。",
       },
       {
@@ -83,7 +83,7 @@ const services = [
       },
       {
         title: "SNS・ファンマーケティング",
-        detail: "X(Twitter)運用、Discord/Telegramコミュニティ。ファンを育てて、LTVを最大化。",
+        detail: "SNS運用、コミュニティ構築。ファンを育てて、LTVを最大化。",
       },
     ],
     pain: "広告に頼れない業界だからこそ、オーガニックとファンの仕組みが生死を分ける。",
