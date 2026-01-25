@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useScroll } from "motion/react";
 import Link from "next/link";
 
 const services = [
@@ -97,8 +97,26 @@ const numbers = [
 ];
 
 export default function ServicesContent() {
+  const { scrollYProgress } = useScroll();
+
   return (
-    <div className="min-h-screen bg-[#0a0a0a]">
+    <>
+      {/* Scroll Progress Indicator */}
+      <motion.div
+        style={{
+          scaleX: scrollYProgress,
+          position: "fixed",
+          top: 64,
+          left: 0,
+          right: 0,
+          height: 3,
+          originX: 0,
+          zIndex: 100,
+        }}
+        className="bg-gradient-to-r from-cyan-400 via-violet-400 to-pink-400"
+      />
+
+      <div className="min-h-screen bg-[#0a0a0a]">
       {/* Hero */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-6">
         <div className="max-w-4xl mx-auto">
@@ -250,5 +268,6 @@ export default function ServicesContent() {
         </div>
       </section>
     </div>
+    </>
   );
 }
