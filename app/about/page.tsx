@@ -2,12 +2,12 @@ import { Metadata } from "next";
 import AboutContent from "./AboutContent";
 
 export const metadata: Metadata = {
-  title: "会社概要",
-  description: "株式会社ゆらの会社概要。北海道北斗市を拠点に、AI・DX推進・Web開発で企業のデジタル変革を支援するIT企業です。会社名、所在地、代表者、設立日、事業内容などの基本情報をご確認いただけます。",
-  keywords: ["会社概要", "株式会社ゆら", "北海道", "北斗市", "IT企業", "AI開発", "DX推進"],
+  title: "会社概要 | 関口純平が代表を務める株式会社ゆら",
+  description: "株式会社ゆらの会社概要。代表取締役CEO 関口純平が率いる、アダルト業界特化のIT企業です。北海道北斗市を拠点に、決済インフラ構築、動画配信プラットフォーム開発、AIソリューション、グロース支援を提供。法人番号9440001009748。",
+  keywords: ["会社概要", "株式会社ゆら", "関口純平", "代表取締役", "北海道", "北斗市", "IT企業", "アダルト業界", "法人番号"],
   openGraph: {
-    title: "会社概要 | 株式会社ゆら",
-    description: "北海道北斗市を拠点に、AI・DX推進・Web開発で企業のデジタル変革を支援するIT企業。",
+    title: "会社概要 | 関口純平が代表を務める株式会社ゆら",
+    description: "代表 関口純平が率いるアダルト業界特化のIT企業。北海道北斗市を拠点に全国対応。",
     url: "/about",
   },
   alternates: {

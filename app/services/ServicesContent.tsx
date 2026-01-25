@@ -1,296 +1,254 @@
 "use client";
 
-import { motion, useScroll } from "motion/react";
+import { motion } from "motion/react";
+import Link from "next/link";
 
 const services = [
   {
-    id: "web",
-    title: "Webサイト・アプリケーション開発",
-    subtitle: "受託開発",
-    color: "from-primary to-cyan-400",
-    intro: "「ホームページを作りたい」「社内の業務をシステム化したい」といったご要望に対応します。最初のヒアリングから、デザイン、開発、公開後のサポートまで一貫してお任せいただけます。",
-    items: [
+    id: "platform",
+    label: "Platform Development",
+    title: "FANZA手数料、高くない？",
+    description: "売上の30〜50%を持っていかれる。自社プラットフォームなら、その利益は全部あなたのもの。",
+    points: [
       {
-        title: "コーポレートサイト制作",
-        content: `
-          会社のホームページを新しく作りたい、あるいは今あるサイトをリニューアルしたいというご依頼をお受けしています。
-
-          まず、どんな目的でサイトを作りたいのかをお聞きします。「採用を強化したい」「会社の信頼性を高めたい」「問い合わせを増やしたい」など、目的によって作るべきサイトの形は変わります。
-
-          デザインは、会社のロゴやパンフレットなど既存の素材があればそれに合わせて統一感を出します。素材がない場合は、こちらで提案することも可能です。
-
-          完成後は、お客様自身でお知らせやブログを更新できるようにWordPressなどの仕組みを導入します。操作方法は画面を見ながら説明しますので、パソコンが苦手な方でも大丈夫です。
-        `,
+        title: "動画配信プラットフォーム構築",
+        detail: "サブスク、PPV、レンタル。収益モデルに合わせた設計。4K対応、DRM実装で海賊版対策も。",
       },
       {
-        title: "業務システム開発",
-        content: `
-          「Excelで顧客リストを管理しているが、人数が増えて限界」「紙の申請書を回覧しているが、テレワークで困っている」といった課題をお持ちの企業様向けに、専用のシステムを開発します。
-
-          まず、今どのような流れで業務を行っているかを詳しくお聞きします。現場で実際に使っているExcelファイルや紙の帳票を見せていただき、どこに手間がかかっているか、どこでミスが起きやすいかを一緒に整理します。
-
-          その上で、「この部分をシステム化すると、毎月◯時間の作業が不要になります」といった形で、具体的な効果をお伝えします。
-
-          システムは、インターネットがあればどこからでもアクセスできるWebアプリケーションとして開発します。スマートフォンからも使えるようにすることも可能です。
-        `,
+        title: "ファンクラブ・クリエイター支援サイト",
+        detail: "OnlyFans、Fantia型のプラットフォームを自社で。投げ銭、限定コンテンツ、ファンとの直接課金。",
       },
       {
-        title: "ランディングページ制作",
-        content: `
-          商品の販売やサービスの申し込みを増やすための、1ページ完結型のWebページを制作します。
-
-          Google広告やInstagram広告を出稿されている企業様から、「広告をクリックした人がそのまま申し込んでくれるページを作りたい」というご依頼をいただくことが多いです。
-
-          制作にあたっては、まず「誰に」「何を」「どう伝えるか」を一緒に整理します。ターゲットとなるお客様像、商品の強み、競合との違いなどをヒアリングし、それをページの構成に落とし込みます。
-
-          公開後は、実際にどれくらいの人が申し込みボタンを押したかなどのデータを確認し、改善のご提案をします。
-        `,
-      },
-      {
-        title: "既存サイトの改善",
-        content: `
-          「ホームページはあるけど、問い合わせが全然来ない」「古いまま放置していて、スマホで見ると崩れる」といったお悩みをお持ちの企業様向けに、現状分析と改善を行います。
-
-          まず、Googleアナリティクスなどのアクセス解析ツールを確認し、サイトの現状を把握します。どのページがよく見られているか、どこで離脱しているか、どんなキーワードで検索されているかなどを調べます。
-
-          その上で、「このページの内容を充実させましょう」「問い合わせフォームをもっと目立つ場所に置きましょう」「ページの表示速度を改善しましょう」といった具体的な改善案をご提案します。
-
-          大規模なリニューアルが必要な場合は、別途お見積もりをお出しします。
-        `,
+        title: "ライブ配信システム",
+        detail: "低遅延ライブ配信、チャット、投げ銭。数千人同時接続に耐えるインフラ設計。",
       },
     ],
-    tech: ["Next.js", "React", "TypeScript", "Node.js", "Python", "AWS", "GCP"],
+    pain: "大手プラットフォームに依存し続けると、規約変更一発で収益が消える。",
+  },
+  {
+    id: "payment",
+    label: "Payment Infrastructure",
+    title: "決済、断られ続けてない？",
+    description: "Stripe、PayPal、国内クレカ大手。全部NG。でも、方法はある。",
+    points: [
+      {
+        title: "業界対応決済の導入支援",
+        detail: "アダルト対応の決済代行会社との接続。クレカ、コンビニ払い、キャリア決済まで。",
+      },
+      {
+        title: "海外決済・多通貨対応",
+        detail: "海外ユーザーからの課金。ドル、ユーロ、暗号通貨。チャージバック対策も込み。",
+      },
+      {
+        title: "サブスク課金システム",
+        detail: "継続課金、トライアル、プラン変更。解約率を下げるUX設計まで。",
+      },
+    ],
+    pain: "決済が止まれば、ビジネスが止まる。冗長構成とリスク分散は必須。",
   },
   {
     id: "ai",
-    title: "AIソリューション開発",
-    subtitle: "AI活用支援",
-    color: "from-secondary to-purple-400",
-    intro: "ChatGPTをはじめとする生成AI技術を使って、日々の業務を効率化する仕組みを作ります。「AIで何ができるか分からない」という段階からご相談いただけます。",
-    items: [
+    label: "AI Solutions",
+    title: "10万本の動画、手動でタグ付けしてる？",
+    description: "コンテンツが増えるほど運用が破綻する。AIで自動化すれば、人は企画に集中できる。",
+    points: [
       {
-        title: "社内向けAIチャットボット",
-        content: `
-          「経費精算のやり方は？」「有給の申請方法は？」「この製品の仕様は？」といった社内からの問い合わせに、AIが自動で回答する仕組みを作ります。
-
-          仕組みとしては、社内のマニュアルや規程集、過去のQ&Aなどをあらかじめ読み込ませておき、質問に対して関連する情報を探し出して回答を生成します。
-
-          導入事例として、ある企業では総務部への問い合わせの約6割がAIで解決できるようになり、担当者の対応時間が大幅に減りました。
-
-          SlackやMicrosoft Teamsなど、普段お使いのチャットツールから利用できるようにすることも可能です。新しいツールを覚える必要はありません。
-        `,
+        title: "コンテンツ自動タグ付け・分類",
+        detail: "出演者、シチュエーション、プレイ内容。AIが自動判定してメタデータを付与。",
       },
       {
-        title: "顧客対応の自動化",
-        content: `
-          Webサイトからの問い合わせや、メールでの質問に対して、AIが自動で回答する仕組みを構築します。
-
-          よくある質問（営業時間、料金、サービス内容など）については、人を介さずにすぐ回答できるようになります。複雑な問い合わせや、契約に関わる内容については、担当者に引き継ぐ仕組みにすることもできます。
-
-          24時間対応が可能になるため、夜間や休日に問い合わせがあってもお客様をお待たせしません。
-
-          また、どんな質問が多いかを分析することで、Webサイトに掲載すべき情報や、商品・サービスの改善点が見えてくることもあります。
-        `,
+        title: "パーソナライズレコメンド",
+        detail: "ユーザーの視聴履歴から好みを学習。「次に見たい」を提案して回遊率・課金率を上げる。",
       },
       {
-        title: "資料作成の自動化",
-        content: `
-          報告書、議事録、提案書など、毎回似たような形式で作成している文書を、AIで自動生成する仕組みを作ります。
-
-          たとえば、営業日報であれば、訪問先や商談内容をフォームに入力するだけで、上長に提出できる形式の報告書が自動で作成されます。
-
-          議事録については、会議の録音データをアップロードすると、発言内容を文字起こしし、要点をまとめた議事録を作成することができます。
-
-          提案書については、顧客情報や過去の提案書をもとに、たたき台となる文書を自動生成し、そこから人が編集する形にすることで、作成時間を短縮できます。
-        `,
-      },
-      {
-        title: "AI導入の相談",
-        content: `
-          「うちでもAIを活用したいけど、何から始めればいいか分からない」という企業様向けに、現状の業務を整理し、AIで効率化できる部分を一緒に探すところからお手伝いします。
-
-          まず、普段どのような業務に時間がかかっているかをヒアリングします。「毎週このレポートを作るのに半日かかる」「この確認作業を3人がかりでやっている」といった具体的な話をお聞きします。
-
-          その上で、「この作業はAIで自動化できます」「この作業は現時点のAI技術では難しいです」といった形で、現実的な提案をします。
-
-          いきなり大きなシステムを作るのではなく、まず1つの業務で試してみて効果を確認する、という進め方をおすすめしています。
-        `,
+        title: "違反コンテンツ自動検出",
+        detail: "児童ポルノ、無修正、権利侵害。アップロード時に自動スキャンして即ブロック。",
       },
     ],
-    tech: ["OpenAI API", "Amazon Bedrock", "Dify", "LangChain", "Python"],
+    pain: "運用コストが売上を食い潰す前に、仕組みで解決する。",
   },
   {
-    id: "dx",
-    title: "DX推進支援",
-    subtitle: "デジタル化支援",
-    color: "from-accent to-pink-400",
-    intro: "「ITに詳しい人がいない」「何から手をつければいいか分からない」という企業様のデジタル化をお手伝いします。ツールの選定から導入、社内への定着まで伴走します。",
-    items: [
+    id: "growth",
+    label: "Growth & Marketing",
+    title: "Google広告もMeta広告も使えない。どうする？",
+    description: "広告が使えないなら、検索とファンで勝つ。業界特化のグロース戦略を設計する。",
+    points: [
       {
-        title: "クラウドツールの導入",
-        content: `
-          紙やExcelで管理している情報を、クラウドサービスに移行するお手伝いをします。
-
-          たとえば、顧客情報をExcelで管理している場合、複数人で同時に編集すると上書きされてしまう、最新版がどれか分からなくなる、といった問題が起きがちです。これをクラウドの顧客管理ツールに移行すると、誰がいつ更新したかが記録され、複数人での編集も問題なくできるようになります。
-
-          ツールは、Notion、kintone、Salesforceなど、お客様の規模や予算、やりたいことに合わせて選定します。無料で使えるものから、本格的な有料サービスまで、選択肢をご説明した上で決めていただきます。
-
-          導入時には、既存のExcelからデータを移行し、使い方の説明会を開催します。
-        `,
+        title: "アダルトSEO",
+        detail: "一般SEOとはロジックが違う。業界特有のキーワード戦略、被リンク獲得、サイト構造設計。",
       },
       {
-        title: "ペーパーレス化",
-        content: `
-          紙で行っている業務を電子化するお手伝いをします。
-
-          契約書であれば、電子契約サービス（クラウドサインやDocuSignなど）を導入することで、印刷・押印・郵送の手間がなくなり、契約完了までの期間が大幅に短縮されます。
-
-          請求書であれば、システムから直接PDFを発行してメールで送付する仕組みにすることで、毎月の請求業務を効率化できます。電子帳簿保存法への対応も可能です。
-
-          申請書であれば、紙の回覧をやめてオンラインでの承認フローに変更することで、テレワーク中でも滞りなく処理が進むようになります。
-
-          どこから手をつければいいか分からない場合は、まず現状の紙業務を洗い出すところからお手伝いします。
-        `,
+        title: "アフィリエイト基盤構築",
+        detail: "アフィリエイター向け管理画面、成果トラッキング、報酬支払いシステムまで一括構築。",
       },
       {
-        title: "社内ツールの整備",
-        content: `
-          社内の情報共有やコミュニケーションを効率化するためのツール導入をお手伝いします。
-
-          「重要な連絡がメールに埋もれて見逃してしまう」「過去のやり取りを探すのに時間がかかる」といった課題がある場合、Slack（スラック）やMicrosoft Teams（チームズ）といったビジネスチャットツールの導入が有効です。
-
-          チャットツールを入れただけでは定着しないことも多いため、「緊急の連絡はこのチャンネルに投稿する」「この種類の相談はこのチャンネルで行う」といったルール作りも一緒に行います。
-
-          また、プロジェクトの進捗管理であればAsana（アサナ）やNotionなど、目的に応じた適切なツールをご提案します。
-        `,
-      },
-      {
-        title: "データの見える化",
-        content: `
-          売上、顧客数、在庫など、経営に必要な数字をひと目で確認できる仕組み（ダッシュボード）を作成します。
-
-          現状、これらの数字を確認するために、複数のシステムを開いたり、Excelでデータを加工したりしている場合、かなりの時間がかかっているはずです。
-
-          データを自動で集計し、グラフや表でリアルタイムに表示するダッシュボードを作成することで、「今月の売上は先月と比べてどうか」「どの商品が売れているか」といった情報をすぐに確認できるようになります。
-
-          ツールとしては、Google データポータル（無料）やTableau（有料）などを使用します。お客様のデータの保管場所や予算に応じて、最適なものをご提案します。
-        `,
+        title: "SNS・ファンマーケティング",
+        detail: "X(Twitter)運用、Discord/Telegramコミュニティ。ファンを育てて、LTVを最大化。",
       },
     ],
-    tech: ["AWS", "GCP", "Salesforce", "kintone", "Notion", "Slack"],
+    pain: "広告に頼れない業界だからこそ、オーガニックとファンの仕組みが生死を分ける。",
   },
 ];
 
-function ServiceSection({
-  service,
-  index,
-}: {
-  service: (typeof services)[0];
-  index: number;
-}) {
-  return (
-    <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="mb-32"
-    >
-      <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="mb-12 text-center">
-          <span className="text-sm text-white uppercase tracking-widest">
-            {service.subtitle}
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-white">
-            {service.title}
-          </h2>
-          <p className="text-white mt-6 text-lg leading-relaxed">
-            {service.intro}
-          </p>
-        </div>
+const numbers = [
+  { value: "50%+", label: "プラットフォーム手数料からの解放" },
+  { value: "10x", label: "コンテンツ管理効率化" },
+  { value: "0", label: "広告費での集客実績" },
+];
 
-        {/* Service Items */}
-        <div className="space-y-12">
-          {service.items.map((item, i) => (
+export default function ServicesContent() {
+  return (
+    <div className="min-h-screen bg-[#0a0a0a]">
+      {/* Hero */}
+      <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-6">
+        <div className="max-w-4xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-sm text-neutral-500 mb-6"
+          >
+            Services
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl md:text-7xl font-bold text-white leading-[1.1] mb-8"
+          >
+            仕組みで
+            <br />
+            信頼を作る。
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-base md:text-xl text-neutral-400 max-w-2xl leading-relaxed"
+          >
+            決済が通らない。広告が打てない。大手に断られる。
+            <br />
+            この業界の「当たり前の壁」を、技術で突破する。
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Numbers */}
+      <section className="py-12 md:py-16 px-6 border-t border-neutral-800">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-3 gap-6 md:gap-12">
+            {numbers.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <p className="text-3xl md:text-5xl font-bold text-white mb-2">
+                  {item.value}
+                </p>
+                <p className="text-xs md:text-sm text-neutral-500">
+                  {item.label}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="pb-20 md:pb-32 px-6">
+        <div className="max-w-4xl mx-auto">
+          {services.map((service) => (
             <motion.article
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
+              key={service.id}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-white/5 border border-white/10 rounded-xl p-8 hover:bg-white/[0.07] transition-colors"
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+              className="py-16 md:py-24 border-t border-neutral-800"
             >
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-6">
-                {item.title}
-              </h3>
-              <div className="text-white leading-loose whitespace-pre-line">
-                {item.content.trim()}
+              {/* Label */}
+              <p className="text-xs font-medium text-neutral-600 uppercase tracking-wider mb-6">
+                {service.label}
+              </p>
+
+              {/* Title */}
+              <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
+                {service.title}
+              </h2>
+
+              {/* Description */}
+              <p className="text-base md:text-lg text-neutral-400 mb-10 max-w-2xl">
+                {service.description}
+              </p>
+
+              {/* Points */}
+              <div className="space-y-6 mb-10">
+                {service.points.map((point, i) => (
+                  <div key={i} className="border-l-2 border-neutral-700 pl-6">
+                    <h3 className="text-white font-semibold mb-2">
+                      {point.title}
+                    </h3>
+                    <p className="text-neutral-500 text-sm leading-relaxed">
+                      {point.detail}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Pain Point */}
+              <div className="bg-neutral-900 border border-neutral-800 px-6 py-4 rounded">
+                <p className="text-sm text-neutral-300">
+                  {service.pain}
+                </p>
               </div>
             </motion.article>
           ))}
         </div>
+      </section>
 
-        {/* Tech Stack */}
-        <div className="mt-12 text-center">
-          <p className="text-white text-sm mb-4">主な使用技術</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {service.tech.map((tech, i) => (
-              <span
-                key={i}
-                className="px-4 py-2 text-sm rounded-full bg-white/10 text-white border border-white/20"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
+      {/* CTA */}
+      <section className="py-20 md:py-32 px-6 border-t border-neutral-800">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight"
+          >
+            「アダルトはちょっと...」
+            <br />
+            と断られた経験、ありませんか？
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-neutral-500 mb-10 max-w-xl mx-auto"
+          >
+            私たちは断りません。NDAベースで、御社の課題を聞かせてください。
+            <br />
+            業界を理解したエンジニアが、一緒に解決策を考えます。
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <Link
+              href="/contact"
+              className="inline-block px-8 py-4 bg-white text-black font-semibold hover:bg-neutral-200 transition-colors"
+            >
+              無料で相談する
+            </Link>
+          </motion.div>
         </div>
-      </div>
-    </motion.section>
-  );
-}
-
-export default function ServicesContent() {
-  const { scrollYProgress } = useScroll();
-
-  return (
-    <>
-      {/* Scroll Progress Indicator */}
-      <motion.div
-        style={{
-          scaleX: scrollYProgress,
-          position: "fixed",
-          top: 64,
-          left: 0,
-          right: 0,
-          height: 3,
-          originX: 0,
-          zIndex: 100,
-        }}
-        className="bg-gradient-to-r from-primary via-secondary to-accent"
-      />
-
-      <div className="min-h-screen bg-background pt-24 pb-16 px-6">
-        {/* Hero */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-24"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            事業内容
-          </h1>
-          <p className="text-white text-lg max-w-2xl mx-auto">
-            お客様のビジネス課題に合わせて、最適なソリューションをご提案します
-          </p>
-        </motion.div>
-
-        {/* Services */}
-        {services.map((service, index) => (
-          <ServiceSection key={service.id} service={service} index={index} />
-        ))}
-      </div>
-    </>
+      </section>
+    </div>
   );
 }

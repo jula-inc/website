@@ -2,11 +2,12 @@ import { Metadata } from "next";
 import HomeContent from "./HomeContent";
 
 export const metadata: Metadata = {
-  title: "株式会社ゆら | AI・DX推進・Web開発で企業のデジタル変革を支援",
-  description: "株式会社ゆらは、AI・DX推進・Web開発で企業のデジタル変革を支援します。AIソリューション開発、業務自動化、Webアプリケーション開発など、お客様のビジネス課題を解決します。北海道北斗市を拠点に全国対応。",
+  title: "株式会社ゆら | 関口純平が率いるアダルト業界特化IT企業",
+  description: "株式会社ゆらは、代表 関口純平が率いるアダルト業界特化のIT企業です。決済インフラ構築、動画配信プラットフォーム開発、AIによるコンテンツ管理自動化、広告に頼らないグロース戦略など、大手が参入しづらい領域で技術力を発揮します。",
+  keywords: ["関口純平", "株式会社ゆら", "アダルト業界", "IT企業", "決済システム", "動画配信", "AI開発"],
   openGraph: {
-    title: "株式会社ゆら | AI・DX推進・Web開発で企業のデジタル変革を支援",
-    description: "AI・DX推進・Web開発で企業のデジタル変革を支援。北海道北斗市を拠点に全国対応。",
+    title: "株式会社ゆら | 関口純平が率いるアダルト業界特化IT企業",
+    description: "代表 関口純平が率いるアダルト業界特化のIT企業。決済・プラットフォーム・AI・グロース支援。",
     url: "/",
   },
   alternates: {

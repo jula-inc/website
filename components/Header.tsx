@@ -55,9 +55,19 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <Link
               href="/"
-              className="text-xl font-bold text-white hover:opacity-80 transition-opacity relative z-[60]"
+              className="flex items-center gap-2 hover:opacity-80 transition-opacity relative z-[60]"
             >
-              株式会社ゆら
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo-transparent.png"
+                alt="株式会社ゆら"
+                width={32}
+                height={32}
+                className="w-8 h-8 brightness-0 invert"
+              />
+              <span className="text-xl font-bold text-white">
+                株式会社ゆら
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
