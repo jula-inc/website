@@ -124,9 +124,9 @@ export default function ServicesContent() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-sm text-neutral-500 mb-6"
+            className="text-sm text-cyan-400 font-medium mb-6 tracking-wider"
           >
-            Services
+            アダルト業界特化
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
