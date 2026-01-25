@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import ServicesContent from "./ServicesContent";
 
-const siteUrl = "https://jula-inc.co.jp";
+const siteUrl = "https://www.jula.jp";
 
 export const metadata: Metadata = {
   title: "事業内容 | アダルト業界特化の決済・プラットフォーム・AI開発",

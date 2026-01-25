@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import AboutContent from "./AboutContent";
 
-const siteUrl = "https://jula-inc.co.jp";
+const siteUrl = "https://www.jula.jp";
 
 export const metadata: Metadata = {
   title: "会社概要 | 関口純平が代表を務める株式会社ゆら",

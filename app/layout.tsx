@@ -10,7 +10,7 @@ const notoSansJP = Noto_Sans_JP({
   weight: ["400", "500", "700"],
 });
 
-const siteUrl = "https://jula-inc.co.jp";
+const siteUrl = "https://www.jula.jp";
 
 export const viewport: Viewport = {
   width: "device-width",

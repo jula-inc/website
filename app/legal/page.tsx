@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import LegalContent from "./LegalContent";
 
-const siteUrl = "https://jula-inc.co.jp";
+const siteUrl = "https://www.jula.jp";
 
 export const metadata: Metadata = {
   title: "特定商取引法に基づく表記",

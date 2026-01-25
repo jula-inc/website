@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import CEOContent from "./CEOContent";
 
-const siteUrl = "https://jula-inc.co.jp";
+const siteUrl = "https://www.jula.jp";
 
 export const metadata: Metadata = {
   title: "関口純平 | 株式会社ゆら・株式会社NINJA 代表取締役CEO",

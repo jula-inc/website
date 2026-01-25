@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import ContactContent from "./ContactContent";
 
-const siteUrl = "https://jula-inc.co.jp";
+const siteUrl = "https://www.jula.jp";
 
 export const metadata: Metadata = {
   title: "お問い合わせ | 株式会社ゆら - 関口純平",

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import TermsContent from "./TermsContent";
 
-const siteUrl = "https://jula-inc.co.jp";
+const siteUrl = "https://www.jula.jp";
 
 export const metadata: Metadata = {
   title: "利用規約",

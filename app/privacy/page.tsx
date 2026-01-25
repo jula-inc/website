@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import PrivacyContent from "./PrivacyContent";
 
-const siteUrl = "https://jula-inc.co.jp";
+const siteUrl = "https://www.jula.jp";
 
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
