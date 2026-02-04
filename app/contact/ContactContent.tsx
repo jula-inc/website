@@ -10,33 +10,6 @@ export default function ContactContent() {
     company: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus("idle");
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setSubmitStatus("success");
-        setFormData({ name: "", email: "", company: "", message: "" });
-      } else {
-        setSubmitStatus("error");
-      }
-    } catch {
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -44,6 +17,18 @@ export default function ContactContent() {
       [e.target.name]: e.target.value,
     });
   };
+
+  const subject = `【お問い合わせ】${formData.company ? `${formData.company} - ` : ""}${formData.name || "お客"}様より`;
+  const body = `お名前: ${formData.name || "未入力"}
+メールアドレス: ${formData.email || "未入力"}
+会社名: ${formData.company || "なし"}
+
+【お問い合わせ内容】
+${formData.message || "未入力"}`;
+
+  const mailtoUrl = `mailto:info@jula.jp?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  const isValid = formData.name && formData.email && formData.message;
 
   return (
     <div className="pt-24 pb-20 min-h-screen">
@@ -65,7 +50,7 @@ export default function ContactContent() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="border border-white/10 rounded-lg p-6"
           >
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <div className="space-y-5">
               <div>
                 <label htmlFor="name" className="block text-sm text-white mb-2">
                   お名前 <span className="text-red-400">*</span>
@@ -74,7 +59,6 @@ export default function ContactContent() {
                   type="text"
                   id="name"
                   name="name"
-                  required
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-white/30 transition-colors text-sm"
@@ -90,7 +74,6 @@ export default function ContactContent() {
                   type="email"
                   id="email"
                   name="email"
-                  required
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-white/30 transition-colors text-sm"
@@ -120,7 +103,6 @@ export default function ContactContent() {
                 <textarea
                   id="message"
                   name="message"
-                  required
                   rows={5}
                   value={formData.message}
                   onChange={handleChange}
@@ -129,25 +111,19 @@ export default function ContactContent() {
                 />
               </div>
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full py-3 bg-white text-black rounded-lg font-medium hover:bg-white/90 transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? "送信中..." : "送信する"}
-              </button>
-
-              {submitStatus === "success" && (
-                <p className="text-green-400 text-sm text-center">
-                  お問い合わせありがとうございます。内容を確認後、ご連絡いたします。
-                </p>
+              {isValid ? (
+                <a
+                  href={mailtoUrl}
+                  className="block w-full py-3 bg-white text-black rounded-lg font-medium hover:bg-white/90 transition-colors text-sm text-center"
+                >
+                  送信
+                </a>
+              ) : (
+                <span className="block w-full py-3 bg-white/50 text-black/50 rounded-lg font-medium text-sm text-center cursor-not-allowed">
+                  必須項目を入力してください
+                </span>
               )}
-              {submitStatus === "error" && (
-                <p className="text-red-400 text-sm text-center">
-                  送信に失敗しました。時間をおいて再度お試しください。
-                </p>
-              )}
-            </form>
+            </div>
           </motion.div>
 
           {/* Contact Info */}

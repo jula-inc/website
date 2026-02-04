@@ -14,7 +14,6 @@
     "@types/three": "^0.182.0",
     "motion": "^12.23.26",
     "next": "16.1.1",
-    "nodemailer": "^7.0.13",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "three": "^0.182.0"
@@ -22,7 +21,6 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
-    "@types/nodemailer": "^7.0.9",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
