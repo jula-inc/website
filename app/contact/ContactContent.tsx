@@ -10,10 +10,32 @@ export default function ContactContent() {
     company: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("お問い合わせありがとうございます。内容を確認後、ご連絡いたします。");
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", company: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -109,10 +131,22 @@ export default function ContactContent() {
 
               <button
                 type="submit"
-                className="w-full py-3 bg-white text-black rounded-lg font-medium hover:bg-white/90 transition-colors text-sm"
+                disabled={isSubmitting}
+                className="w-full py-3 bg-white text-black rounded-lg font-medium hover:bg-white/90 transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                送信する
+                {isSubmitting ? "送信中..." : "送信する"}
               </button>
+
+              {submitStatus === "success" && (
+                <p className="text-green-400 text-sm text-center">
+                  お問い合わせありがとうございます。内容を確認後、ご連絡いたします。
+                </p>
+              )}
+              {submitStatus === "error" && (
+                <p className="text-red-400 text-sm text-center">
+                  送信に失敗しました。時間をおいて再度お試しください。
+                </p>
+              )}
             </form>
           </motion.div>
 
