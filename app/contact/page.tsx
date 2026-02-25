@@ -4,12 +4,22 @@ import ContactContent from "./ContactContent";
 const siteUrl = "https://www.jula.jp";
 
 export const metadata: Metadata = {
-  title: "お問い合わせ | 株式会社ゆら - 関口純平",
-  description: "株式会社ゆらへのお問い合わせ。代表 関口純平が直接対応。アダルト業界向け決済システム、動画配信プラットフォーム、AI開発、SEO・マーケティングに関するご相談を承ります。他社に断られた案件もNDAベースで無料相談。",
-  keywords: ["お問い合わせ", "相談", "見積もり", "関口純平", "株式会社ゆら", "アダルト業界", "決済相談", "プラットフォーム開発相談"],
+  title: "お問い合わせ | 株式会社ゆら",
+  description:
+    "株式会社ゆらへのお問い合わせ。AI開発・システム開発・DX推進・グロース支援に関するご相談を承ります。代表 関口純平が直接対応。まずは無料相談から。",
+  keywords: [
+    "お問い合わせ",
+    "相談",
+    "見積もり",
+    "AI開発相談",
+    "システム開発",
+    "関口純平",
+    "株式会社ゆら",
+  ],
   openGraph: {
-    title: "お問い合わせ | 株式会社ゆら - 関口純平",
-    description: "アダルト業界向けIT開発のご相談。他社に断られた案件もNDAベースで無料相談。",
+    title: "お問い合わせ | 株式会社ゆら",
+    description:
+      "AI開発・システム開発・DX推進に関するご相談。代表が直接対応、まずは無料相談から。",
     url: `${siteUrl}/contact`,
   },
   alternates: {

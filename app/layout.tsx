@@ -22,11 +22,23 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "株式会社ゆら | 関口純平が率いるアダルト業界特化IT企業",
+    default: "株式会社ゆら | AI開発・DX推進・システム開発",
     template: "%s | 株式会社ゆら",
   },
-  description: "株式会社ゆらは、代表 関口純平が率いるアダルト業界特化のIT企業です。決済インフラ構築、動画配信プラットフォーム開発、AIソリューション、グロース支援など、大手が参入しづらい領域で技術力を発揮。他社に断られた案件もNDAベースで対応。",
-  keywords: ["関口純平", "株式会社ゆら", "アダルト業界", "IT企業", "決済システム", "動画配信プラットフォーム", "AI開発", "SEO対策", "北海道", "システム開発"],
+  description:
+    "株式会社ゆらは、AIソリューション・システム開発・グロース支援を一気通貫で提供するテクノロジーカンパニーです。代表 関口純平のAIプロダクト開発・新規事業共創の実績をもとに、2週間でPoC、1ヶ月でMVPを実現。AIエージェント開発、RAG、音声AI、業務自動化など最先端AI技術で事業成果に直結します。",
+  keywords: [
+    "株式会社ゆら",
+    "関口純平",
+    "AI開発",
+    "AIエージェント",
+    "DX推進",
+    "システム開発",
+    "RAG",
+    "業務自動化",
+    "グロース支援",
+    "AIソリューション",
+  ],
   authors: [{ name: "関口純平" }, { name: "株式会社ゆら" }],
   creator: "関口純平",
   publisher: "株式会社ゆら",
@@ -40,13 +52,15 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     url: siteUrl,
     siteName: "株式会社ゆら",
-    title: "株式会社ゆら | 関口純平が率いるアダルト業界特化IT企業",
-    description: "代表 関口純平が率いるアダルト業界特化のIT企業。決済・プラットフォーム・AI・グロース支援。",
+    title: "株式会社ゆら | AI開発・DX推進・システム開発",
+    description:
+      "AIソリューション・システム開発・グロース支援を一気通貫で提供。2週間でPoC、1ヶ月でMVPを実現するスピード開発。",
   },
   twitter: {
     card: "summary_large_image",
-    title: "株式会社ゆら | 関口純平が率いるアダルト業界特化IT企業",
-    description: "代表 関口純平が率いるアダルト業界特化のIT企業。決済・プラットフォーム・AI・グロース支援。",
+    title: "株式会社ゆら | AI開発・DX推進・システム開発",
+    description:
+      "AIソリューション・システム開発・グロース支援を一気通貫で提供。2週間でPoC、1ヶ月でMVPを実現するスピード開発。",
     creator: "@sekijum",
   },
   robots: {
@@ -71,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" className="dark" style={{ colorScheme: "dark" }}>
       <head>
         <script
           type="application/ld+json"
@@ -81,7 +95,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "株式会社ゆら",
               url: siteUrl,
-              logo: `${siteUrl}/logo-transparent.png`,
+              logo: `${siteUrl}/logo.png`,
               founder: {
                 "@type": "Person",
                 name: "関口純平",

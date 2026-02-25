@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 const footerLinks = [
@@ -10,7 +8,7 @@ const footerLinks = [
   { name: "利用規約", href: "/terms" },
   { name: "特定商取引法に基づく表記", href: "/legal" },
   { name: "お問い合わせ", href: "/contact" },
-];
+] as const;
 
 export default function Footer() {
   return (
@@ -19,32 +17,42 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           <div>
             <h3 className="text-lg font-bold text-white mb-4">株式会社ゆら</h3>
-            <p className="text-white/60 text-sm leading-relaxed">
+            <address className="text-white/60 text-sm leading-relaxed not-italic">
               〒049-0101<br />
               北海道北斗市追分4-11-8<br />
-              TEL: 080-9585-8493<br />
-              Email: info@jula.jp
-            </p>
+              <a
+                href="tel:080-9585-8493"
+                className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm"
+              >
+                TEL: 080-9585-8493
+              </a><br />
+              <a
+                href="mailto:info@jula.jp"
+                className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm"
+              >
+                Email: info@jula.jp
+              </a>
+            </address>
             <p className="text-white/40 text-sm mt-4">
-              営業時間: 平日 9:00 - 18:00
+              営業時間: 平日 9:00 – 18:00
             </p>
           </div>
 
-          <div>
+          <nav aria-label="フッターリンク">
             <h4 className="font-medium text-white mb-4">リンク</h4>
             <ul className="space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-white/60 hover:text-white transition-colors text-sm"
+                    className="text-white/60 hover:text-white transition-colors text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm"
                   >
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         </div>
 
         <div className="border-t border-white/10 pt-8">

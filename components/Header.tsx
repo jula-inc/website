@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence, Variants } from "motion/react";
 
 const navigation = [
@@ -12,7 +13,6 @@ const navigation = [
   { name: "お問い合わせ", href: "/contact" },
 ];
 
-// Animated path for hamburger
 const Path = ({
   d,
   variants,
@@ -25,7 +25,7 @@ const Path = ({
   <motion.path
     fill="transparent"
     strokeWidth="2"
-    stroke="white"
+    stroke="currentColor"
     strokeLinecap="round"
     d={d}
     variants={variants}
@@ -36,7 +36,14 @@ const Path = ({
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Prevent scroll when menu is open
+  const toggleMenu = useCallback(() => {
+    setIsOpen((prev) => !prev);
+  }, []);
+
+  const closeMenu = useCallback(() => {
+    setIsOpen(false);
+  }, []);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -57,41 +64,40 @@ export default function Header() {
               href="/"
               className="flex items-center gap-2 hover:opacity-80 transition-opacity relative z-[60]"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/logo-transparent.png"
+              <Image
+                src="/logo.png"
                 alt="株式会社ゆら"
                 width={32}
                 height={32}
-                className="w-8 h-8 brightness-0 invert"
+                className="w-8 h-8"
+                priority
               />
               <span className="text-xl font-bold text-white">
                 株式会社ゆら
               </span>
             </Link>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-white/80 hover:text-white transition-colors text-sm"
+                  className="text-white/80 hover:text-white transition-colors text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm"
                 >
                   {item.name}
                 </Link>
               ))}
             </div>
 
-            {/* Mobile Menu Toggle */}
             <motion.button
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden relative z-[60] w-10 h-10 flex items-center justify-center"
-              aria-label="メニュー"
+              onClick={toggleMenu}
+              className="md:hidden relative z-[60] w-10 h-10 flex items-center justify-center text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-md"
+              aria-label={isOpen ? "メニューを閉じる" : "メニューを開く"}
+              aria-expanded={isOpen}
               initial={false}
               animate={isOpen ? "open" : "closed"}
             >
-              <svg width="20" height="20" viewBox="0 0 20 20">
+              <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
                 <Path
                   variants={{
                     closed: { d: "M 2 4 L 18 4" },
@@ -118,7 +124,6 @@ export default function Header() {
         </nav>
       </header>
 
-      {/* Mobile Navigation Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -128,11 +133,12 @@ export default function Header() {
             transition={{ duration: 0.3 }}
             className="md:hidden fixed inset-0 bg-background z-[55] flex flex-col items-center justify-center pt-16"
           >
-            <motion.div
+            <motion.nav
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.4 }}
               className="flex flex-col items-center gap-10"
+              aria-label="モバイルナビゲーション"
             >
               {navigation.map((item, i) => (
                 <motion.div
@@ -143,14 +149,14 @@ export default function Header() {
                 >
                   <Link
                     href={item.href}
-                    className="text-3xl font-bold text-white hover:text-primary transition-colors"
-                    onClick={() => setIsOpen(false)}
+                    className="text-3xl font-bold text-white hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm"
+                    onClick={closeMenu}
                   >
                     {item.name}
                   </Link>
                 </motion.div>
               ))}
-            </motion.div>
+            </motion.nav>
           </motion.div>
         )}
       </AnimatePresence>
