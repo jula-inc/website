@@ -21,10 +21,10 @@ export default function Footer() {
               〒049-0101<br />
               北海道北斗市追分4-11-8<br />
               <a
-                href="tel:080-9585-8493"
+                href="tel:080-2726-1740"
                 className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm"
               >
-                TEL: 080-9585-8493
+                TEL: 080-2726-1740
               </a><br />
               <a
                 href="mailto:info@jula.jp"

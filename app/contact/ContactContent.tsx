@@ -172,10 +172,10 @@ ${formData.message || "未入力"}`;
                   <p className="text-white mb-1">電話番号</p>
                   <p className="text-white">
                     <a
-                      href="tel:080-9585-8493"
+                      href="tel:080-2726-1740"
                       className="hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm"
                     >
-                      080-9585-8493
+                      080-2726-1740
                     </a>
                   </p>
                 </div>
