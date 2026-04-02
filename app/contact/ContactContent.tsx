@@ -165,7 +165,7 @@ ${formData.message || "未入力"}`;
                 <div>
                   <p className="text-white mb-1">所在地</p>
                   <p className="text-white">
-                    〒049-0101 北海道北斗市追分4-11-8
+                    〒503-0893 岐阜県大垣市南頰町四丁目28番地
                   </p>
                 </div>
                 <div>

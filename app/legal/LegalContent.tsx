@@ -3,7 +3,7 @@ import { FadeIn } from "@/components/FadeIn";
 const lawInfo = [
   { label: "販売業者", value: "株式会社ゆら" },
   { label: "運営統括責任者", value: "代表取締役 関口純平" },
-  { label: "所在地", value: "〒049-0101 北海道北斗市追分4-11-8" },
+  { label: "所在地", value: "〒503-0893 岐阜県大垣市南頰町四丁目28番地" },
   { label: "電話番号", value: "080-2726-1740" },
   { label: "メールアドレス", value: "info@jula.jp" },
   { label: "販売価格", value: "各商品・サービスページに記載" },

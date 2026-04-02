@@ -18,8 +18,8 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold text-white mb-4">株式会社ゆら</h3>
             <address className="text-white/60 text-sm leading-relaxed not-italic">
-              〒049-0101<br />
-              北海道北斗市追分4-11-8<br />
+              〒503-0893<br />
+              岐阜県大垣市南頰町四丁目28番地<br />
               <a
                 href="tel:080-2726-1740"
                 className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-sm"

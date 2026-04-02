@@ -105,9 +105,10 @@ export default function RootLayout({
               foundingDate: "2026-01-14",
               address: {
                 "@type": "PostalAddress",
-                addressLocality: "北斗市",
-                addressRegion: "北海道",
-                postalCode: "049-0101",
+                streetAddress: "南頰町四丁目28番地",
+                addressLocality: "大垣市",
+                addressRegion: "岐阜県",
+                postalCode: "503-0893",
                 addressCountry: "JP",
               },
               sameAs: [],

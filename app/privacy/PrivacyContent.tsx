@@ -74,7 +74,7 @@ export default function PrivacyContent() {
               <address className="p-4 bg-white/5 rounded-lg border border-white/10 not-italic">
                 <p className="text-white text-sm">
                   株式会社ゆら<br />
-                  〒049-0101 北海道北斗市追分4-11-8<br />
+                  〒503-0893 岐阜県大垣市南頰町四丁目28番地<br />
                   TEL: 080-2726-1740<br />
                   Email: info@jula.jp
                 </p>
