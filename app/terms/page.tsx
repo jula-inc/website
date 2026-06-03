@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "利用規約 | 株式会社ゆら",
     description: "サービスのご利用に関する条件について。",
     url: `${siteUrl}/terms`,
+    images: ["/opengraph-image.png"],
   },
   robots: {
     index: true,

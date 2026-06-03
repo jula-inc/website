@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "プライバシーポリシー | 株式会社ゆら",
     description: "個人情報の取り扱いについて。",
     url: `${siteUrl}/privacy`,
+    images: ["/opengraph-image.png"],
   },
   robots: {
     index: true,

@@ -1,7 +1,17 @@
-"use client";
-
-import { motion, useScroll } from "motion/react";
 import Image from "next/image";
+import { Reveal } from "@/components/reveal";
+import { CtaSection } from "@/components/cta-section";
+
+const message = [
+  "断言します。いまのAIは、ほとんどの人が思っているより、ずっと賢い。成果が出ないのは、AIの能力ではなく、使い方の設計が足りていないからです。",
+  "「ChatGPTを触ってみたけど、大したことなかった」。よく聞きます。でも、同じAIを使っていても、毎月の利益を何百万円も動かす会社と、何も変わらない会社がある。違うのはAIの性能ではなく、どの業務に、どう組み込むか。その一点だけです。",
+  "私は学生の頃から4社で0→1をつくり、国内最大手コンサルで数十社のAI新規事業をリードしてきました。自分のプロダクトも、立ち上げから3ヶ月で黒字に。技術もわかる、事業もわかる。だから「どこにAIを差し込めば、利益が動くか」が、手に取るように見えます。",
+  "私たちは、AIを納品して終わりにはしません。見るのは、導入数でも稼働率でもなく、損益計算書がどう変わったか。利益が動かないなら、それはまだ仕事の途中です。",
+  "そして、とにかく速い。考えている時間があるなら、まず動かす。最短2日でPoC、1ヶ月でMVP。正解は、会議室ではなく市場にしかありません。",
+  "私たちは、AIの評論家ではありません。自ら手を動かし、数字が動くまで離れない実行部隊です。AIで勝ちたいなら、まず一度、話しましょう。",
+] as const;
+
+const closing = "AIの賢さは、もう誰の手にもある。差がつくのは、使い方だけです。";
 
 const career = [
   {
@@ -26,146 +36,95 @@ const career = [
     title: "株式会社ゆら設立 - 代表取締役就任",
     description: `「AIを、事業の武器にする」をミッションに株式会社ゆらを創業し、代表取締役に就任。これまで培ったAIプロダクト開発・DX推進・新規事業共創の全てを集約し、AIソリューション・システム開発・グロース支援を一気通貫で提供する体制を構築。創業直後からAIエージェント開発、RAGによる社内ナレッジAI、リアルタイム音声AI、業務自動化基盤など、最先端のAI技術を事業成果に直結させるプロジェクトを次々と展開。2週間でPoC、1ヶ月でMVPを形にするスピード開発を武器に、大企業が半年かかるプロセスを圧倒的に短縮。システム開発では0→1のプロダクト立ち上げから決済基盤、高負荷インフラまで対応。グロースではAI×コンテンツマーケティングとSEO戦略を組み合わせ、広告費ゼロで集客基盤を構築する手法を確立。「AIで何かやりたいが、何から始めればいいかわからない」という企業に対し、業務分析からAI適用設計、PoC、本番導入、運用まで一気通貫で伴走。単なる受託開発ではなく、クライアントの事業成長に本気でコミットするパートナーとして事業を拡大中。`,
   },
+  {
+    period: "2026年6月",
+    title: "Arlebo Ltd（英国ロンドン）創業 - Founder & CEO就任",
+    description: `日本で築いた新規事業開発の知見を、より難度の高い市場へ。2026年6月、グローバル展開の拠点として英国ロンドンにArlebo Ltdを創業し、Founder & CEOに就任。Arleboが手がけるのは、規制・与信・決済などのハードルが高く、多くの企業が参入をためらうリスクの高い領域に特化した事業支援。市場参入の戦略設計から、立ち上げ、収益化、グロースまでを一貫して担い、コンプライアンスと収益性を両立させながら事業を成立させる。リスクが高い領域ほど競合は少なく、先行者の優位は大きい。誰もが避ける市場でこそ価値を生み出すパートナーとして、世界へ広げていく。`,
+  },
 ] as const;
 
 export default function CEOContent() {
-  const { scrollYProgress } = useScroll();
-
   return (
     <>
-      <motion.div
-        style={{
-          scaleX: scrollYProgress,
-          position: "fixed",
-          top: 64,
-          left: 0,
-          right: 0,
-          height: 3,
-          originX: 0,
-          zIndex: 100,
-        }}
-        className="bg-gradient-to-r from-primary via-secondary to-accent"
-        aria-hidden="true"
-      />
-
-      <div className="min-h-screen bg-background pt-24 pb-16 px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
-            代表紹介
-          </h1>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-4xl mx-auto mb-20"
-        >
-          <div className="flex flex-col items-center">
-            <div className="relative w-48 h-48 md:w-64 md:h-64 mb-8 rounded-full overflow-hidden border-4 border-primary/50">
-              <Image
-                src="/sekiguchi.png"
-                alt="関口 純平"
-                fill
-                sizes="(max-width: 768px) 192px, 256px"
-                className="object-cover"
-                priority
-              />
-            </div>
-
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-              関口 純平
-            </h2>
-            <p className="text-white text-lg">代表取締役 CEO</p>
-          </div>
-        </motion.div>
-
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto mb-20"
-          aria-labelledby="message-heading"
-        >
-          <h2
-            id="message-heading"
-            className="text-2xl md:text-3xl font-bold text-white mb-8 text-center"
-          >
-            代表メッセージ
-          </h2>
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
-            <div className="text-white leading-relaxed space-y-6">
-              <p>
-                AIで、ゲームのルールが変わった。10人のチームが、100人の組織を追い抜ける時代になった。
-              </p>
-              <p>
-                だが、ほとんどの企業はまだ気づいていない。ChatGPTを触って「うちもAI導入しました」と言っているだけ。事業のどこにAIを埋め込めば利益が倍になるのか。どの業務をAIエージェントに任せれば人件費が半分になるのか。本気で設計している会社は、驚くほど少ない。
-              </p>
-              <p>
-                私は大学時代から4社でエンジニアとして0→1のプロダクト開発を手がけ、国内最大手コンサルで数十社のAI×新規事業の共創をリードしてきた。自分自身でもAIプロダクトを企画・開発し、リリース3ヶ月で収益化まで持っていった。コードを書ける人間はいる。だが、「この技術で、どう稼ぐか」まで設計できる人間はほとんどいない。
-              </p>
-              <p>
-                私たちがやるのは、AIの導入支援ではない。AIを事業の武器に変えることだ。業務自動化で人件費を半分にする。AIエージェントを24時間稼働させる。予測AIで競合より一手先を打つ。音声AIでカスタマーサポートを丸ごと置き換える。技術を、直接的に利益に変換する。
-              </p>
-              <p>
-                スピードが全てだ。2週間でPoCを出す。1ヶ月でMVPを形にする。大企業が半年かけて稟議を回している間に、私たちはプロダクトをリリースし、ユーザーからフィードバックを得ている。この差が、1年後に取り返しのつかない差になる。
-              </p>
-              <p>
-                「AIで何かやりたいが、何から始めればいいかわからない」。その相談が一番多い。だからこそ、私たちがいる。業務の棚卸し、AI適用箇所の特定、技術選定、設計、開発、運用。全て一気通貫でやる。そして、成果が出るまで絶対に手を離さない。
-              </p>
-              <p className="font-semibold text-white text-lg">
-                AIを使う側か、AIで勝つ側か。その差は、今この瞬間に決まる。
-              </p>
-            </div>
-          </div>
-        </motion.section>
-
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
-          aria-labelledby="career-heading"
-        >
-          <h2
-            id="career-heading"
-            className="text-2xl md:text-3xl font-bold text-white mb-12 text-center"
-          >
-            経歴
-          </h2>
-          <div className="space-y-12">
-            {career.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative pl-8 border-l-2 border-primary/50"
-              >
-                <div
-                  className="absolute left-0 top-0 w-4 h-4 -translate-x-[9px] rounded-full bg-primary"
-                  aria-hidden="true"
+      {/* Hero */}
+      <section className="relative overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-20">
+        <div className="grid-bg absolute inset-0" aria-hidden />
+        <div className="container-page relative">
+          <Reveal>
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.25em] text-muted-2">
+              代表紹介
+            </p>
+          </Reveal>
+          <div className="mt-8 grid items-center gap-10 md:grid-cols-[auto_1fr]">
+            <Reveal>
+              <div className="relative aspect-square w-40 overflow-hidden rounded-3xl border border-border sm:w-48">
+                <Image
+                  src="/sekiguchi.png"
+                  alt="関口 純平 - 株式会社ゆら 代表取締役CEO"
+                  fill
+                  sizes="192px"
+                  className="object-cover"
+                  priority
                 />
-                <span className="inline-block px-3 py-1 bg-white/10 text-white text-sm font-semibold rounded-full mb-3">
-                  {item.period}
-                </span>
-                <h3 className="text-xl font-bold text-white mb-4">
-                  {item.title}
-                </h3>
-                <p className="text-white leading-relaxed">{item.description}</p>
-              </motion.div>
+              </div>
+            </Reveal>
+            <Reveal delay={100}>
+              <div>
+                <h1 className="text-3xl font-black tracking-tight sm:text-5xl">関口 純平</h1>
+                <p className="mt-3 text-lg text-muted">代表取締役 CEO</p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Message */}
+      <section className="container-page py-12 sm:py-16">
+        <div className="mx-auto max-w-3xl">
+          <Reveal>
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">代表メッセージ</h2>
+          </Reveal>
+          <div className="mt-8 space-y-6">
+            {message.map((para, i) => (
+              <Reveal key={i} delay={i * 40}>
+                <p className="text-base leading-loose text-muted sm:text-lg">{para}</p>
+              </Reveal>
+            ))}
+            <Reveal>
+              <p className="border-l-2 border-accent pl-5 text-xl font-bold leading-relaxed text-foreground sm:text-2xl">
+                {closing}
+              </p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Career */}
+      <section className="container-page py-16 sm:py-24">
+        <div className="mx-auto max-w-3xl">
+          <Reveal>
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">経歴</h2>
+          </Reveal>
+          <div className="mt-10 space-y-px">
+            {career.map((item, i) => (
+              <Reveal key={i} delay={i * 60}>
+                <div className="relative border-l border-border pb-12 pl-8 last:pb-0">
+                  <span className="absolute -left-[7px] top-1 h-3.5 w-3.5 rounded-full bg-accent-deep ring-4 ring-background" />
+                  <p className="font-mono text-xs font-medium uppercase tracking-wider text-muted-2">
+                    {item.period}
+                  </p>
+                  <h3 className="mt-2 text-lg font-semibold leading-snug tracking-tight">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-relaxed text-muted">{item.description}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
-        </motion.section>
-      </div>
+        </div>
+      </section>
+
+      <CtaSection />
     </>
   );
 }

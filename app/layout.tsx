@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -16,7 +16,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#0a0a0a",
+  themeColor: "#ffffff",
 };
 
 export const metadata: Metadata = {
@@ -85,41 +85,74 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className="dark" style={{ colorScheme: "dark" }}>
+    <html lang="ja">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "株式会社ゆら",
-              url: siteUrl,
-              logo: `${siteUrl}/logo.png`,
-              founder: {
-                "@type": "Person",
-                name: "関口純平",
-                jobTitle: "代表取締役CEO",
-                url: `${siteUrl}/ceo`,
-              },
-              foundingDate: "2026-01-14",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "南頰町四丁目28番地",
-                addressLocality: "大垣市",
-                addressRegion: "岐阜県",
-                postalCode: "503-0893",
-                addressCountry: "JP",
-              },
-              sameAs: [],
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": `${siteUrl}/#organization`,
+                  name: "株式会社ゆら",
+                  alternateName: ["株式会社JULA", "JULA Inc."],
+                  url: siteUrl,
+                  logo: {
+                    "@type": "ImageObject",
+                    url: `${siteUrl}/logo.png`,
+                    width: 512,
+                    height: 512,
+                  },
+                  image: `${siteUrl}/opengraph-image.png`,
+                  description:
+                    "AIソリューション・システム開発・グロース支援を提供するテクノロジーカンパニー。最短2日でPoC、1ヶ月でMVPを実現する。",
+                  foundingDate: "2026-01-14",
+                  email: "info@jula.jp",
+                  telephone: "+81-80-2726-1740",
+                  founder: {
+                    "@type": "Person",
+                    "@id": `${siteUrl}/#founder`,
+                    name: "関口純平",
+                    jobTitle: "代表取締役CEO",
+                    url: `${siteUrl}/ceo`,
+                  },
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress: "南頰町四丁目28番地",
+                    addressLocality: "大垣市",
+                    addressRegion: "岐阜県",
+                    postalCode: "503-0893",
+                    addressCountry: "JP",
+                  },
+                  contactPoint: {
+                    "@type": "ContactPoint",
+                    telephone: "+81-80-2726-1740",
+                    email: "info@jula.jp",
+                    contactType: "customer support",
+                    areaServed: "JP",
+                    availableLanguage: ["Japanese"],
+                  },
+                  sameAs: [],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": `${siteUrl}/#website`,
+                  url: siteUrl,
+                  name: "株式会社ゆら",
+                  inLanguage: "ja",
+                  publisher: { "@id": `${siteUrl}/#organization` },
+                },
+              ],
             }),
           }}
         />
       </head>
       <body className={`${notoSansJP.variable} antialiased`}>
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <SiteHeader />
+        <main className="relative min-h-screen">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );

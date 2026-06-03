@@ -68,6 +68,11 @@ const personJsonLd = {
       "@type": "Organization",
       name: "株式会社NINJA",
     },
+    {
+      "@type": "Organization",
+      name: "Arlebo Ltd",
+      url: "https://arlebo-website.vercel.app",
+    },
   ],
   image: `${siteUrl}/sekiguchi.png`,
   url: `${siteUrl}/ceo`,

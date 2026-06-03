@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     description:
       "AIソリューション・システム開発・グロース支援を一気通貫で提供。",
     url: `${siteUrl}/about`,
+    images: ["/opengraph-image.png"],
   },
   alternates: {
     canonical: `${siteUrl}/about`,

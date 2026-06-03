@@ -1,4 +1,4 @@
-import { FadeIn } from "@/components/FadeIn";
+import { Reveal } from "@/components/reveal";
 
 const lawInfo = [
   { label: "販売業者", value: "株式会社ゆら" },
@@ -19,43 +19,32 @@ const lawInfo = [
 
 export default function LegalContent() {
   return (
-    <div className="pt-24 pb-20 min-h-screen">
-      <div className="max-w-4xl mx-auto px-6">
-        <FadeIn>
-          <h1 className="text-3xl font-bold text-white mb-10">
+    <section className="relative overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-32">
+      <div className="grid-bg absolute inset-0" aria-hidden />
+      <div className="container-page relative">
+        <Reveal>
+          <h1 className="text-4xl font-black tracking-tight sm:text-5xl">
             特定商取引法に基づく表記
           </h1>
-        </FadeIn>
+        </Reveal>
 
-        <FadeIn delay={0.1}>
-          <div className="border border-white/10 rounded-lg overflow-hidden">
-            <table className="w-full">
-              <tbody>
-                {lawInfo.map((info) => (
-                  <tr
-                    key={info.label}
-                    className="border-b border-white/10 last:border-b-0"
-                  >
-                    <th
-                      scope="row"
-                      className="text-left py-4 px-6 bg-white/5 text-white font-normal w-1/3 text-sm"
-                    >
-                      {info.label}
-                    </th>
-                    <td className="py-4 px-6 text-white text-sm">
-                      {info.value}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <p className="text-sm text-white text-right mt-4">
-            最終更新日: 2026年1月1日
-          </p>
-        </FadeIn>
+        <Reveal delay={80} className="mt-12 max-w-3xl">
+          <dl className="overflow-hidden rounded-card border border-border">
+            {lawInfo.map((info, i) => (
+              <div
+                key={info.label}
+                className={`grid grid-cols-1 gap-1 px-6 py-5 sm:grid-cols-[220px_1fr] sm:gap-6 ${
+                  i % 2 === 0 ? "bg-surface" : "bg-background"
+                }`}
+              >
+                <dt className="text-sm font-medium text-muted-2">{info.label}</dt>
+                <dd className="text-sm leading-relaxed text-foreground">{info.value}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="mt-4 text-right text-sm text-muted-2">最終更新日: 2026年1月1日</p>
+        </Reveal>
       </div>
-    </div>
+    </section>
   );
 }
