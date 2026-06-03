@@ -1,4 +1,4 @@
-import { FadeIn } from "@/components/FadeIn";
+import { Reveal } from "@/components/reveal";
 
 const companyInfo = [
   { label: "商号", value: "株式会社JULA（株式会社ゆら）" },
@@ -14,37 +14,40 @@ const companyInfo = [
 
 export default function AboutContent() {
   return (
-    <div className="pt-24 pb-20 min-h-screen">
-      <div className="max-w-4xl mx-auto px-6">
-        <FadeIn>
-          <h1 className="text-3xl font-bold text-white mb-10">会社概要</h1>
-        </FadeIn>
+    <>
+      <section className="relative overflow-hidden pt-32 pb-12 sm:pt-40 sm:pb-16">
+        <div className="grid-bg absolute inset-0" aria-hidden />
+        <div className="container-page relative">
+          <Reveal>
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.25em] text-muted-2">
+              About
+            </p>
+          </Reveal>
+          <Reveal delay={80}>
+            <h1 className="mt-5 text-4xl font-black tracking-tight sm:text-6xl">会社概要</h1>
+          </Reveal>
+        </div>
+      </section>
 
-        <FadeIn delay={0.1}>
-          <div className="border border-white/10 rounded-lg overflow-hidden">
-            <table className="w-full">
-              <tbody>
-                {companyInfo.map((info) => (
-                  <tr
-                    key={info.label}
-                    className="border-b border-white/10 last:border-b-0"
-                  >
-                    <th
-                      scope="row"
-                      className="text-left py-4 px-6 bg-white/5 text-white font-normal w-1/3 text-sm"
-                    >
-                      {info.label}
-                    </th>
-                    <td className="py-4 px-6 text-white text-sm tabular-nums">
-                      {info.value}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </FadeIn>
-      </div>
-    </div>
+      <section className="container-page py-12 pb-24 sm:py-16 sm:pb-32">
+        <Reveal className="mx-auto max-w-3xl">
+          <dl className="overflow-hidden rounded-card border border-border">
+            {companyInfo.map((info, i) => (
+              <div
+                key={info.label}
+                className={`grid grid-cols-1 gap-1 px-6 py-5 sm:grid-cols-[200px_1fr] sm:gap-6 ${
+                  i % 2 === 0 ? "bg-surface" : "bg-background"
+                }`}
+              >
+                <dt className="text-sm font-medium text-muted-2">{info.label}</dt>
+                <dd className="text-sm leading-relaxed text-foreground tabular-nums">
+                  {info.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
+      </section>
+    </>
   );
 }

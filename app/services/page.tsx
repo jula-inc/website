@@ -1,7 +1,21 @@
 import { Metadata } from "next";
 import ServicesContent from "./ServicesContent";
+import { services } from "@/lib/services";
 
 const siteUrl = "https://www.jula.jp";
+
+// 事業内容ページに実在する10領域に対応した ItemList 構造化データ。
+const itemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "株式会社ゆらのサービス",
+  itemListElement: services.map((service, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: service.label.split(" — ")[1],
+    url: `${siteUrl}/services#${service.id}`,
+  })),
+};
 
 export const metadata: Metadata = {
   title: "事業内容 | AIソリューション・システム開発・グロース支援",
@@ -24,6 +38,7 @@ export const metadata: Metadata = {
     description:
       "AIエージェント開発からグロース支援まで10領域を一気通貫で提供。2週間でPoC、1ヶ月でMVP。",
     url: `${siteUrl}/services`,
+    images: ["/opengraph-image.png"],
   },
   alternates: {
     canonical: `${siteUrl}/services`,
@@ -31,5 +46,13 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  return <ServicesContent />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
+      <ServicesContent />
+    </>
+  );
 }

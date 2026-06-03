@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     description:
       "AI開発・システム開発・DX推進に関するご相談。代表が直接対応、まずは無料相談から。",
     url: `${siteUrl}/contact`,
+    images: ["/opengraph-image.png"],
   },
   alternates: {
     canonical: `${siteUrl}/contact`,

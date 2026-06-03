@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "特定商取引法に基づく表記 | 株式会社ゆら",
     description: "販売業者情報、支払方法、返品・キャンセルポリシーについて。",
     url: `${siteUrl}/legal`,
+    images: ["/opengraph-image.png"],
   },
   robots: {
     index: true,
