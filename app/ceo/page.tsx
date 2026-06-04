@@ -4,9 +4,9 @@ import CEOContent from "./CEOContent";
 const siteUrl = "https://www.jula.jp";
 
 export const metadata: Metadata = {
-  title: "関口純平 | 代表取締役CEO - 株式会社ゆら・株式会社NINJA",
+  title: "関口純平 | 代表取締役CEO - 株式会社ゆら",
   description:
-    "関口純平（せきぐちじゅんぺい）は、株式会社ゆら・株式会社NINJAの代表取締役CEO。大学時代から4社でエンジニア経験を積み、国内最大手コンサルティングファームで数十社のAI×新規事業共創をリード。自らAIプロダクトを開発・収益化した実績を持つエンジニア起業家。",
+    "関口純平（せきぐちじゅんぺい）は、株式会社ゆらの代表取締役CEO。大学時代から4社でエンジニア経験を積み、国内最大手コンサルティングファームで数十社のAI×新規事業共創をリード。自らAIプロダクトを開発・収益化した実績を持つエンジニア起業家。",
   keywords: [
     "関口純平",
     "せきぐちじゅんぺい",
@@ -14,14 +14,13 @@ export const metadata: Metadata = {
     "代表取締役",
     "CEO",
     "株式会社ゆら",
-    "株式会社NINJA",
     "AIエンジニア",
     "起業家",
     "AI開発",
     "スタートアップ経営者",
   ],
   openGraph: {
-    title: "関口純平 | 代表取締役CEO - 株式会社ゆら・株式会社NINJA",
+    title: "関口純平 | 代表取締役CEO - 株式会社ゆら",
     description:
       "エンジニア出身のAI起業家。数十社のAI×新規事業共創をリードし、自らAIプロダクトを開発・収益化。",
     url: `${siteUrl}/ceo`,
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "関口純平 | 代表取締役CEO - 株式会社ゆら・株式会社NINJA",
+    title: "関口純平 | 代表取締役CEO - 株式会社ゆら",
     description:
       "エンジニア出身のAI起業家。数十社のAI×新規事業共創をリードし、自らAIプロダクトを開発・収益化。",
     images: [`${siteUrl}/sekiguchi.png`],
@@ -66,10 +65,6 @@ const personJsonLd = {
     },
     {
       "@type": "Organization",
-      name: "株式会社NINJA",
-    },
-    {
-      "@type": "Organization",
       name: "Arlebo Ltd",
       url: "https://arlebo-website.vercel.app",
     },
@@ -87,7 +82,7 @@ const personJsonLd = {
     "エンジニアリング",
   ],
   description:
-    "株式会社ゆら・株式会社NINJAの代表取締役CEO。大学時代から4社でエンジニア経験を積み、国内最大手コンサルティングファームで数十社のAI×新規事業共創をリード。自らAIプロダクトを開発・収益化した実績を持つ。",
+    "株式会社ゆらの代表取締役CEO。大学時代から4社でエンジニア経験を積み、国内最大手コンサルティングファームで数十社のAI×新規事業共創をリード。自らAIプロダクトを開発・収益化した実績を持つ。",
 };
 
 export default function CEOPage() {
