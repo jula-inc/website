@@ -173,10 +173,10 @@ export default function HomeContent() {
                   Message
                 </p>
                 <blockquote className="mt-5 text-2xl font-bold leading-snug tracking-tight sm:text-3xl">
-                  AIが、頭が悪いわけじゃない。使い方が、悪いだけだ。
+                  AIで差がつくのは、頭の良さじゃない。どれだけ速く、何回試したか。
                 </blockquote>
                 <p className="mt-6 text-sm leading-relaxed text-muted">
-                  AIの賢さは、もう誰の手にもある。差がつくのは、使い方だけです。
+                  もう、賢いAIは誰でも使える。勝負を決めるのは、回転の速さです。
                 </p>
                 <div className="mt-8 flex items-center gap-4">
                   <div>
