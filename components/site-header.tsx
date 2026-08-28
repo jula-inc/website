@@ -4,10 +4,10 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { nav, site } from "@/lib/site";
+import { nav } from "@/lib/site";
 import { Button } from "./ui/button";
 import { MobileNav } from "./mobile-nav";
-import { LogoMark } from "./logo";
+import { LogoWordmark } from "./logo";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -30,9 +30,8 @@ export function SiteHeader() {
       )}
     >
       <div className="container-page flex h-16 items-center justify-between md:h-20">
-        <Link href="/" className="group flex items-center gap-2.5">
-          <LogoMark className="h-8 w-8 transition-transform group-hover:-translate-y-0.5" />
-          <span className="text-lg font-bold tracking-tight">{site.name}</span>
+        <Link href="/" className="group flex items-center">
+          <LogoWordmark className="text-2xl transition-transform group-hover:-translate-y-0.5" />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { site, footerLinks } from "@/lib/site";
-import { LogoMark } from "./logo";
+import { LogoWordmark } from "./logo";
 import { AddressLines } from "./address-lines";
 
 export function SiteFooter() {
@@ -9,9 +9,8 @@ export function SiteFooter() {
     <footer className="relative border-t border-border bg-surface/60">
       <div className="container-page grid gap-12 py-16 md:grid-cols-[1.4fr_1fr]">
         <div>
-          <div className="flex items-center gap-2.5">
-            <LogoMark className="h-8 w-8" />
-            <span className="text-lg font-bold tracking-tight">{site.name}</span>
+          <div className="flex items-center">
+            <LogoWordmark className="text-2xl" />
           </div>
           <address className="mt-6 space-y-2 text-sm not-italic text-muted">
             <p className="flex items-start gap-2">
