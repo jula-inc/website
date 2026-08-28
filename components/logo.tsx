@@ -1,28 +1,29 @@
+import { Roboto_Slab } from "next/font/google";
 import { cn } from "@/lib/utils";
 
+const logoFont = Roboto_Slab({
+  weight: "700",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 /**
- * 株式会社ゆら ブランドマーク。
- * 上下を逆にした「A」（∀）の横棒を脚の外へはみ出させた、スピード感のあるモノマーク。
+ * 株式会社ゆら ワードマーク。
+ * SONY のような文字だけのロゴ。スラブセリフ体の「JULA」。
  * currentColor を継承するため text-foreground（チャコール）で描画される。
  */
-export function LogoMark({ className }: { className?: string }) {
+export function LogoWordmark({ className }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 100 100"
-      className={cn("text-foreground", className)}
-      fill="none"
+    <span
       role="img"
       aria-label="株式会社ゆら"
+      className={cn(
+        logoFont.className,
+        "select-none leading-none tracking-[0.08em] text-foreground",
+        className
+      )}
     >
-      <g
-        stroke="currentColor"
-        strokeWidth="6.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M28 22 L50 82 L72 22" />
-        <path d="M26.8 46 L73.2 46" />
-      </g>
-    </svg>
+      JULA
+    </span>
   );
 }
