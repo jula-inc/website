@@ -6,15 +6,19 @@ export const site = {
   url: "https://www.jula.jp",
   email: "info@jula.jp",
   tel: "080-2726-1740",
+  // LINE公式アカウント（ベーシックID @174kbktw）の友だち追加URL。
+  // 空文字にするとサイト上のLINEボタンは非表示になる。
+  lineId: "@174kbktw",
+  lineUrl: "https://line.me/R/ti/p/%40174kbktw" as string,
   company: {
     corporateNumber: "9440001009748",
     representative: "代表取締役/CEO 関口純平",
-    postalCode: "503-0893",
-    address: "〒503-0893 岐阜県大垣市南頰町四丁目28番地",
-    addressLines: ["〒503-0893", "岐阜県大垣市南頰町四丁目28番地"],
+    postalCode: "160-0023",
+    address: "〒160-0023 東京都新宿区西新宿5-8-2 惠徳ビル",
+    addressLines: ["〒160-0023", "東京都新宿区西新宿5-8-2 惠徳ビル"],
     founded: "2026年1月14日",
     bank: "三井住友銀行",
-    hours: "平日 9:00 – 18:00",
+    hours: "24時間365日",
   },
   copyright: "© 2026 株式会社ゆら",
 } as const;

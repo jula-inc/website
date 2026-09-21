@@ -160,7 +160,7 @@ export default function HomeContent() {
               <div className="relative">
                 <div className="relative aspect-square w-full max-w-xs overflow-hidden rounded-2xl border border-border">
                   <Image
-                    src="/sekiguchi.png"
+                    src="/sekiguchi.jpg"
                     alt="関口 純平 - 株式会社ゆら 代表取締役CEO"
                     fill
                     sizes="(max-width: 768px) 80vw, 320px"

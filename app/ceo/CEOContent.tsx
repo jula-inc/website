@@ -53,7 +53,7 @@ export default function CEOContent() {
             <Reveal>
               <div className="relative aspect-square w-40 overflow-hidden rounded-3xl border border-border sm:w-48">
                 <Image
-                  src="/sekiguchi.png"
+                  src="/sekiguchi.jpg"
                   alt="関口 純平 - 株式会社ゆら 代表取締役CEO"
                   fill
                   sizes="192px"

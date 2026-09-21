@@ -4,9 +4,9 @@ import CEOContent from "./CEOContent";
 const siteUrl = "https://www.jula.jp";
 
 export const metadata: Metadata = {
-  title: "関口純平 | 代表取締役CEO - 株式会社ゆら",
+  title: "関口純平 | 代表取締役CEO",
   description:
-    "関口純平（せきぐちじゅんぺい）は、株式会社ゆらの代表取締役CEO。大学時代から4社でエンジニア経験を積み、国内最大手コンサルティングファームで数十社のAI×新規事業共創をリード。自らAIプロダクトを開発・収益化した実績を持つエンジニア起業家。",
+    "毎日コードを書いている経営者です。大学時代から4社でエンジニア、国内最大手のコンサルティングファームで数十社のAI×新規事業をリード。いまは自分でAIプロダクトをつくって収益化しています。株式会社ゆら 代表取締役CEO ／ 関口純平。",
   keywords: [
     "関口純平",
     "せきぐちじゅんぺい",
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "関口純平 | 代表取締役CEO - 株式会社ゆら",
     description:
-      "エンジニア出身のAI起業家。数十社のAI×新規事業共創をリードし、自らAIプロダクトを開発・収益化。",
+      "毎日コードを書いている経営者。数十社のAI×新規事業をリードし、いまは自分でAIプロダクトをつくって収益化しています。",
     url: `${siteUrl}/ceo`,
     type: "profile",
     images: [
       {
-        url: `${siteUrl}/sekiguchi.png`,
-        width: 400,
-        height: 400,
+        url: `${siteUrl}/sekiguchi.jpg`,
+        width: 1024,
+        height: 1024,
         alt: "関口純平 - 株式会社ゆら代表取締役CEO",
       },
     ],
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
     card: "summary",
     title: "関口純平 | 代表取締役CEO - 株式会社ゆら",
     description:
-      "エンジニア出身のAI起業家。数十社のAI×新規事業共創をリードし、自らAIプロダクトを開発・収益化。",
-    images: [`${siteUrl}/sekiguchi.png`],
+      "毎日コードを書いている経営者。数十社のAI×新規事業をリードし、いまは自分でAIプロダクトをつくって収益化しています。",
+    images: [`${siteUrl}/sekiguchi.jpg`],
   },
   alternates: {
     canonical: `${siteUrl}/ceo`,
@@ -69,7 +69,7 @@ const personJsonLd = {
       url: "https://arlebo-website.vercel.app",
     },
   ],
-  image: `${siteUrl}/sekiguchi.png`,
+  image: `${siteUrl}/sekiguchi.jpg`,
   url: `${siteUrl}/ceo`,
   sameAs: [],
   knowsAbout: [
@@ -82,7 +82,7 @@ const personJsonLd = {
     "エンジニアリング",
   ],
   description:
-    "株式会社ゆらの代表取締役CEO。大学時代から4社でエンジニア経験を積み、国内最大手コンサルティングファームで数十社のAI×新規事業共創をリード。自らAIプロダクトを開発・収益化した実績を持つ。",
+    "株式会社ゆら 代表取締役CEO。大学時代から4社でエンジニアとして働き、国内最大手のコンサルティングファームで数十社のAI×新規事業をリード。現在も自らコードを書き、AIプロダクトの開発と収益化に携わる。",
 };
 
 export default function CEOPage() {
