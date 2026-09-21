@@ -4,7 +4,7 @@ import ContactContent from "./ContactContent";
 const siteUrl = "https://www.jula.jp";
 
 export const metadata: Metadata = {
-  title: "お問い合わせ | 株式会社ゆら",
+  title: "お問い合わせ",
   description:
     "株式会社ゆらへのお問い合わせ。AI開発・システム開発・DX推進・グロース支援に関するご相談を承ります。代表 関口純平が直接対応。まずは無料相談から。",
   keywords: [

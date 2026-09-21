@@ -1,15 +1,16 @@
 import { Reveal } from "@/components/reveal";
+import { site } from "@/lib/site";
 
 const companyInfo = [
   { label: "商号", value: "株式会社JULA（株式会社ゆら）" },
   { label: "法人番号", value: "9440001009748" },
   { label: "代表者", value: "代表取締役/CEO 関口純平" },
-  { label: "所在地", value: "〒503-0893 岐阜県大垣市南頰町四丁目28番地" },
+  { label: "所在地", value: site.company.address },
   { label: "代表番号", value: "080-2726-1740" },
   { label: "メールアドレス", value: "info@jula.jp" },
   { label: "創業", value: "2026年1月14日" },
   { label: "主要取引銀行", value: "三井住友銀行" },
-  { label: "営業時間", value: "平日 9:00 – 18:00" },
+  { label: "営業時間", value: site.company.hours },
 ] as const;
 
 export default function AboutContent() {

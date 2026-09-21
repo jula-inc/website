@@ -4,7 +4,7 @@ import AboutContent from "./AboutContent";
 const siteUrl = "https://www.jula.jp";
 
 export const metadata: Metadata = {
-  title: "会社概要 | 株式会社ゆら",
+  title: "会社概要",
   description:
     "株式会社ゆらの会社概要。代表取締役CEO 関口純平。AIソリューション・システム開発・グロース支援を一気通貫で提供するテクノロジーカンパニー。法人番号9440001009748。",
   keywords: [

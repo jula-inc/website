@@ -120,10 +120,10 @@ export default function RootLayout({
                   },
                   address: {
                     "@type": "PostalAddress",
-                    streetAddress: "南頰町四丁目28番地",
-                    addressLocality: "大垣市",
-                    addressRegion: "岐阜県",
-                    postalCode: "503-0893",
+                    streetAddress: "西新宿5-8-2 惠徳ビル",
+                    addressLocality: "新宿区",
+                    addressRegion: "東京都",
+                    postalCode: "160-0023",
                     addressCountry: "JP",
                   },
                   contactPoint: {
@@ -133,8 +133,22 @@ export default function RootLayout({
                     contactType: "customer support",
                     areaServed: "JP",
                     availableLanguage: ["Japanese"],
+                    hoursAvailable: {
+                      "@type": "OpeningHoursSpecification",
+                      dayOfWeek: [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday",
+                        "Sunday",
+                      ],
+                      opens: "00:00",
+                      closes: "23:59",
+                    },
                   },
-                  sameAs: [],
+                  sameAs: ["https://line.me/R/ti/p/%40174kbktw"],
                 },
                 {
                   "@type": "WebSite",

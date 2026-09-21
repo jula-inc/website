@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/reveal";
+import { site } from "@/lib/site";
 
 export default function PrivacyContent() {
   return (
@@ -73,7 +74,7 @@ export default function PrivacyContent() {
               <p className="text-sm leading-relaxed text-foreground">
                 株式会社ゆら
                 <br />
-                〒503-0893 岐阜県大垣市南頰町四丁目28番地
+                {site.company.address}
                 <br />
                 TEL: 080-2726-1740
                 <br />

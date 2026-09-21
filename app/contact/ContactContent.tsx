@@ -1,6 +1,7 @@
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { ContactForm } from "@/components/contact-form";
+import { site } from "@/lib/site";
 
 export default function ContactContent() {
   return (
@@ -27,7 +28,7 @@ export default function ContactContent() {
                 <h2 className="text-lg font-medium text-foreground">お問い合わせ先</h2>
                 <div className="mt-5 space-y-6">
                   <ContactItem icon={MapPin} label="所在地">
-                    〒503-0893 岐阜県大垣市南頰町四丁目28番地
+                    {site.company.address}
                   </ContactItem>
                   <ContactItem icon={Phone} label="電話番号">
                     <a
@@ -51,8 +52,8 @@ export default function ContactContent() {
               <div>
                 <h2 className="text-lg font-medium text-foreground">営業時間</h2>
                 <div className="mt-5">
-                  <ContactItem icon={Clock} label="平日 9:00 – 18:00">
-                    土日祝日はお休みをいただいております
+                  <ContactItem icon={Clock} label={site.company.hours}>
+                    土日祝日を含め、いつでもご連絡ください。基本的にすぐご返信します
                   </ContactItem>
                 </div>
               </div>
